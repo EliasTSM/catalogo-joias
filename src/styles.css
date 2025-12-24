@@ -1,0 +1,21 @@
+:root {
+  --roxo: #5b2d8b;
+  --roxo-claro: #7d4bb3;
+  --dourado: #d4af37;
+  --dourado-claro: #f1d27a;
+  --branco: #ffffff;
+  --cinza: #f5f5f5;
+  --preto: #000;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cinza);
+  color: #333;
+}
+

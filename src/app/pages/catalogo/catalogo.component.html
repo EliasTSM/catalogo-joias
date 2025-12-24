@@ -1,0 +1,45 @@
+<header class="topo">
+  <div class="marca">
+    <div class="texto-marca">
+      <h1>Érica  Oliveira</h1>
+      <p class="slogan">Body Piercer</p>
+    </div>
+  </div>
+</header>
+
+<section class="filtros">
+  <div class="filtro-item">
+    <label>Local de uso</label>
+    <select [(ngModel)]="localSelecionado" (change)="aplicarFiltros()">
+      <option value="Todos">Todos</option>
+      <option value="Trágus">Trágus</option>
+      <option value="Nariz">Nariz</option>
+      <option value="Hélix">Hélix</option>
+      <option value="Conch">Conch</option>
+    </select>
+  </div>
+
+  <div class="filtro-item">
+    <label>Ordenar por</label>
+    <select [(ngModel)]="ordenacao" (change)="aplicarFiltros()">
+      <option value="menor">Menor preço</option>
+      <option value="maior">Maior preço</option>
+    </select>
+  </div>
+</section>
+
+<section class="catalogo">
+  <a
+    class="card"
+    *ngFor="let joia of filtradas"
+    [routerLink]="['/joia', joia.codigo]"
+  >
+    <img [src]="joia.imagem" alt="{{ joia.nome }}">
+
+    <div class="card-body">
+      <h2>{{ joia.nome }}</h2>
+      <p class="local">Código {{ joia.codigo }}</p>
+      <span class="preco">R$ {{ joia.preco }}</span>
+    </div>
+  </a>
+</section>

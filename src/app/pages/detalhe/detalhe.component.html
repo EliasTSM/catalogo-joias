@@ -1,0 +1,24 @@
+<div *ngIf="joia" class="detalhe">
+
+  <a routerLink="/" class="btn-voltar">← Voltar ao catálogo</a>
+
+  <!-- COLUNA DA IMAGEM -->
+  <div class="detalhe-imagem">
+    <img [src]="joia.imagem" alt="{{ joia.nome }}">
+    <p class="codigo">Código: {{ joia.codigo }}</p>
+  </div>
+
+  <!-- COLUNA DAS INFORMAÇÕES -->
+  <div class="detalhe-info">
+    <h2>{{ joia.nome }}</h2>
+    <p><strong>Uso:</strong> {{ joia.local }}</p>
+    <span>R$ {{ joia.preco }}</span>
+
+    <a class="btn-whatsapp"
+       [href]="'https://wa.me/5571982041698?text=Tenho interesse na joia ' + joia.nome + ' ' + joia.codigo"
+       target="_blank">
+      Comprar pelo WhatsApp
+    </a>
+  </div>
+
+</div>
